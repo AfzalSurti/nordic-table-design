@@ -42,7 +42,7 @@
 
 ---
 
-## How to Improve Further 📈
+## How to Improve More 📈
 
 ### **Immediate Actions:**
 
