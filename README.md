@@ -68,6 +68,21 @@ npm run dev
 
 ---
 
+## 🌐 Deployment
+
+Ready to put your restaurant online?
+
+📖 **[QUICK_DEPLOY.md](QUICK_DEPLOY.md)** - Deploy in 5 minutes  
+📖 **[DEPLOYMENT.md](DEPLOYMENT.md)** - Complete deployment guide
+
+**Services Used:**
+- **Frontend:** Vercel (FREE)
+- **Backend:** Railway (FREE $5/month credit)
+- **Cost:** $0 for most restaurants
+- **Auto-deploy:** Every `git push` updates your site
+
+---
+
 ## 📋 System Requirements
 
 - Node.js v18 or higher
