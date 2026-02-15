@@ -1,8 +1,26 @@
+# Saffran Restaurant - SEO Robots Configuration
+User-agent: *
+Allow: /
+Allow: /src/
+Allow: /assets/
+Disallow: /node_modules/
+Disallow: /dist/
+Disallow: /.git/
+Disallow: /.env
+
+# Google-specific
 User-agent: Googlebot
 Allow: /
 
+# Bing-specific
 User-agent: Bingbot
 Allow: /
+
+# Sitemap location
+Sitemap: https://saffran-peach.vercel.app/sitemap.xml
+
+# Crawl delay (be nice to servers)
+Crawl-delay: 1
 
 User-agent: Twitterbot
 Allow: /

@@ -2,36 +2,135 @@
 <html lang="sv">
   <head>
     <meta charset="UTF-8" />
+    
+    <!-- Primary Meta Tags -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Saffran | Autentisk Orientalisk Restaurang i Stockholm</title>
+    <meta name="title" content="Saffran | Autentisk Orientalisk Restaurang i Stockholm" />
+    <meta name="description" content="Saffran – Smaken av Mellanöstern i hjärtat av Stockholm. Njut av autentiska rätter, lunchbuffé och catering. Boka ditt bord idag!" />
+    <meta name="keywords" content="restaurang stockholm, orientalisk mat, mellanöstern, kebab, falafel, lunchbuffé, catering, boka bord" />
+    <meta name="author" content="Saffran Restaurant" />
+    <meta name="language" content="Swedish" />
+    <meta name="robots" content="index, follow" />
+    <meta name="revisit-after" content="7 days" />
+    
+    <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="icon" type="image/svg+xml" sizes="32x32" href="/favicon-32x32.svg" />
     <link rel="apple-touch-icon" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Saffran | Modern Orientalisk Restaurang i Stockholm</title>
-    <meta name="description" content="Saffran – Smaken av Mellanöstern i hjärtat av Stockholm. Njut av autentiska rätter, lunchbuffé och catering. Boka bord idag!" />
-    <meta property="og:title" content="Saffran | Modern Orientalisk Restaurang" />
-    <meta property="og:description" content="Autentiska mellanösternska smaker med skandinavisk elegans. Boka bord, se menyn och beställ catering." />
+    
+    <!-- Open Graph / Facebook -->
     <meta property="og:type" content="restaurant" />
+    <meta property="og:url" content="https://saffran-peach.vercel.app/" />
+    <meta property="og:title" content="Saffran | Autentisk Orientalisk Restaurang" />
+    <meta property="og:description" content="Autentiska mellanösternska smaker med skandinavisk elegans. Boka bord, se menyn och beställ catering." />
     <meta property="og:locale" content="sv_SE" />
+    <meta property="og:site_name" content="Saffran" />
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://saffran-peach.vercel.app/" />
+    <meta property="twitter:title" content="Saffran | Autentisk Orientalisk Restaurang" />
+    <meta property="twitter:description" content="Autentiska mellanösternska smaker. Boka bord online!" />
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://saffran-peach.vercel.app/" />
+    
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet" />
+    
+    <!-- JSON-LD Schema Markup -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "Restaurant",
       "name": "Saffran",
-      "description": "Modern Oriental Cuisine in Stockholm",
+      "description": "Autentisk Orientalisk Restaurang i Stockholm",
+      "url": "https://saffran-peach.vercel.app/",
+      "image": "https://saffran-peach.vercel.app/favicon.svg",
+      "telephone": "+46812345667",
+      "email": "info@saffranrestaurant.se",
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "Kungsgatan 15",
         "addressLocality": "Stockholm",
         "postalCode": "111 43",
+        "addressRegion": "Stockholm",
         "addressCountry": "SE"
       },
-      "telephone": "+46812345667",
-      "servesCuisine": "Middle Eastern",
-      "openingHours": ["Mo-Th 11:00-21:00", "Fr 11:00-22:00", "Sa 12:00-22:00", "Su 12:00-20:00"],
-      "priceRange": "$$"
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "59.3293",
+        "longitude": "18.0727"
+      },
+      "servesCuisine": ["Middle Eastern", "Nordic"],
+      "cuisine": "Middle Eastern",
+      "priceRange": "$$",
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday"],
+          "opens": "11:00",
+          "closes": "21:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Friday",
+          "opens": "11:00",
+          "closes": "22:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Saturday",
+          "opens": "12:00",
+          "closes": "22:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Sunday",
+          "opens": "12:00",
+          "closes": "20:00"
+        }
+      ],
+      "rating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.8",
+        "ratingCount": "127"
+      },
+      "sameAs": [
+        "https://www.facebook.com/saffranrestaurant",
+        "https://www.instagram.com/saffranrestaurant"
+      ]
+    }
+    </script>
+    
+    <!-- Breadcrumb Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://saffran-peach.vercel.app/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Meny",
+          "item": "https://saffran-peach.vercel.app/#menu"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Boka Bord",
+          "item": "https://saffran-peach.vercel.app/#booking"
+        }
+      ]
     }
     </script>
   </head>
