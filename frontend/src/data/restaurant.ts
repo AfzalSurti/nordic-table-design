@@ -45,6 +45,16 @@ export interface Dish {
   description: Bi;
   price: number;
   image: string;
+  category?: Bi;
+  ingredients?: Bi;
+  allergens?: Bi;
+  calories?: number;
+  servingSize?: Bi;
+  preparationTime?: number; // minutes
+  isVegetarian?: boolean;
+  isVegan?: boolean;
+  isGlutenFree?: boolean;
+  spicyLevel?: number; // 0-3
 }
 
 export const featuredDishes: Dish[] = [
@@ -56,6 +66,17 @@ export const featuredDishes: Dish[] = [
     },
     price: 189,
     image: "dish-1",
+    category: { sv: "Kebabrätter", en: "Kebab Dishes" },
+    ingredients: {
+      sv: "Lammkött, basmatiris, saffran, yoghurt, granatäpple, vitlök, olivolja, örter",
+      en: "Lamb meat, basmati rice, saffron, yogurt, pomegranate, garlic, olive oil, herbs",
+    },
+    allergens: { sv: "Laktos", en: "Lactose" },
+    calories: 650,
+    servingSize: { sv: "350g", en: "350g" },
+    preparationTime: 25,
+    isGlutenFree: true,
+    spicyLevel: 1,
   },
   {
     name: { sv: "Blandad Grill", en: "Mixed Grill" },
@@ -65,6 +86,16 @@ export const featuredDishes: Dish[] = [
     },
     price: 229,
     image: "dish-2",
+    category: { sv: "Kebabrätter", en: "Kebab Dishes" },
+    ingredients: {
+      sv: "Kycklingfilé, lammkött, tomat, pitabröd, spiskummin, paprika, persilja",
+      en: "Chicken fillet, lamb meat, tomato, pita bread, cumin, paprika, parsley",
+    },
+    allergens: { sv: "Gluten", en: "Gluten" },
+    calories: 720,
+    servingSize: { sv: "400g", en: "400g" },
+    preparationTime: 30,
+    spicyLevel: 2,
   },
   {
     name: { sv: "Saffronsris med Kyckling", en: "Saffron Rice with Chicken" },
@@ -74,6 +105,17 @@ export const featuredDishes: Dish[] = [
     },
     price: 179,
     image: "dish-3",
+    category: { sv: "Risrätter", en: "Rice Dishes" },
+    ingredients: {
+      sv: "Kycklingfilé, basmatiris, saffran, aprikoser, russin, mandel, pistasch, kardemumma",
+      en: "Chicken fillet, basmati rice, saffron, apricots, raisins, almonds, pistachios, cardamom",
+    },
+    allergens: { sv: "Nötter", en: "Nuts" },
+    calories: 580,
+    servingSize: { sv: "380g", en: "380g" },
+    preparationTime: 35,
+    isGlutenFree: true,
+    spicyLevel: 0,
   },
   {
     name: { sv: "Falafeltallrik", en: "Falafel Plate" },
@@ -83,6 +125,19 @@ export const featuredDishes: Dish[] = [
     },
     price: 149,
     image: "dish-4",
+    category: { sv: "Vegetariska Rätter", en: "Vegetarian Dishes" },
+    ingredients: {
+      sv: "Kikärtor, persilja, vitlök, lök, sesamfrön, tahini, paprika, gurka, rödkål",
+      en: "Chickpeas, parsley, garlic, onion, sesame seeds, tahini, bell pepper, cucumber, red cabbage",
+    },
+    allergens: { sv: "Sesam", en: "Sesame" },
+    calories: 480,
+    servingSize: { sv: "320g", en: "320g" },
+    preparationTime: 20,
+    isVegetarian: true,
+    isVegan: true,
+    isGlutenFree: true,
+    spicyLevel: 1,
   },
   {
     name: { sv: "Grillad Havsabborre", en: "Grilled Sea Bass" },
@@ -92,6 +147,17 @@ export const featuredDishes: Dish[] = [
     },
     price: 249,
     image: "dish-5",
+    category: { sv: "Fisk & Skaldjur", en: "Fish & Seafood" },
+    ingredients: {
+      sv: "Havsabborre, citron, dill, timjan, sparris, paprika, zucchini, olivolja",
+      en: "Sea bass, lemon, dill, thyme, asparagus, bell pepper, zucchini, olive oil",
+    },
+    allergens: { sv: "Fisk", en: "Fish" },
+    calories: 420,
+    servingSize: { sv: "450g", en: "450g" },
+    preparationTime: 40,
+    isGlutenFree: true,
+    spicyLevel: 0,
   },
   {
     name: { sv: "Dessertfat", en: "Dessert Platter" },
@@ -101,6 +167,119 @@ export const featuredDishes: Dish[] = [
     },
     price: 129,
     image: "dish-6",
+    category: { sv: "Efterrätter", en: "Desserts" },
+    ingredients: {
+      sv: "Phyllofilodeg, valnötter, honung, mozzarella, pistasch, grädde, rosenvatten",
+      en: "Phyllo pastry, walnuts, honey, mozzarella, pistachios, cream, rose water",
+    },
+    allergens: { sv: "Nötter, Gluten, Laktos", en: "Nuts, Gluten, Lactose" },
+    calories: 520,
+    servingSize: { sv: "180g", en: "180g" },
+    preparationTime: 15,
+    isVegetarian: true,
+    spicyLevel: 0,
+  },
+  {
+    name: { sv: "Lammlägg Tajine", en: "Lamb Shank Tajine" },
+    description: {
+      sv: "8-timmars brässerad lammlägg med aprikoser, mandel och rotfrukter",
+      en: "8-hour braised lamb shank with apricots, almonds and root vegetables",
+    },
+    price: 289,
+    image: "dish-1",
+    category: { sv: "Specialrätter", en: "Specials" },
+    ingredients: {
+      sv: "Lammlägg, aprikoser, mandel, morötter, palsternacka, lök, kanel, saffran, koriander",
+      en: "Lamb shank, apricots, almonds, carrots, parsnip, onion, cinnamon, saffron, coriander",
+    },
+    allergens: { sv: "Nötter", en: "Nuts" },
+    calories: 780,
+    servingSize: { sv: "520g", en: "520g" },
+    preparationTime: 480,
+    isGlutenFree: true,
+    spicyLevel: 1,
+  },
+  {
+    name: { sv: "Lax Kebab med Dillsås", en: "Salmon Kebab with Dill Sauce" },
+    description: {
+      sv: "Grillad svensk lax med saffronsris, dillsås och gurksallad",
+      en: "Grilled Swedish salmon with saffron rice, dill sauce and cucumber salad",
+    },
+    price: 219,
+    image: "dish-5",
+    category: { sv: "Fisk & Skaldjur", en: "Fish & Seafood" },
+    ingredients: {
+      sv: "Lax, dill, grädde, gurka, basmatiris, saffran, citron, vitlök",
+      en: "Salmon, dill, cream, cucumber, basmati rice, saffron, lemon, garlic",
+    },
+    allergens: { sv: "Fisk, Laktos", en: "Fish, Lactose" },
+    calories: 580,
+    servingSize: { sv: "380g", en: "380g" },
+    preparationTime: 25,
+    isGlutenFree: true,
+    spicyLevel: 0,
+  },
+  {
+    name: { sv: "Vegetarisk Moussaka", en: "Vegetarian Moussaka" },
+    description: {
+      sv: "Lager av aubergine, zucchini, potatis och krämig bechamelsås",
+      en: "Layers of eggplant, zucchini, potato and creamy béchamel sauce",
+    },
+    price: 169,
+    image: "dish-4",
+    category: { sv: "Vegetariska Rätter", en: "Vegetarian Dishes" },
+    ingredients: {
+      sv: "Aubergine, zucchini, potatis, tomat, lök, vitlök, mjölk, smör, ost, olivolja",
+      en: "Eggplant, zucchini, potato, tomato, onion, garlic, milk, butter, cheese, olive oil",
+    },
+    allergens: { sv: "Laktos, Gluten", en: "Lactose, Gluten" },
+    calories: 480,
+    servingSize: { sv: "350g", en: "350g" },
+    preparationTime: 55,
+    isVegetarian: true,
+    spicyLevel: 0,
+  },
+  {
+    name: { sv: "Kryddad Köttfärsrulle", en: "Spiced Meatloaf Roll" },
+    description: {
+      sv: "Orientalisk köttfärsrulle fylld med pistasch, pinjenötter och granatäpple",
+      en: "Oriental meatloaf roll filled with pistachios, pine nuts and pomegranate",
+    },
+    price: 199,
+    image: "dish-2",
+    category: { sv: "Kebabrätter", en: "Kebab Dishes" },
+    ingredients: {
+      sv: "Nötfärs, lammfärs, pistasch, pinjenötter, granatäpple, lök, vitlök, kanel, spiskummin",
+      en: "Beef mince, lamb mince, pistachios, pine nuts, pomegranate, onion, garlic, cinnamon, cumin",
+    },
+    allergens: { sv: "Nötter", en: "Nuts" },
+    calories: 680,
+    servingSize: { sv: "320g", en: "320g" },
+    preparationTime: 45,
+    isGlutenFree: true,
+    spicyLevel: 2,
+  },
+  {
+    name: { sv: "Hummus Bowl med Rotfrukter", en: "Hummus Bowl with Root Vegetables" },
+    description: {
+      sv: "Krämig hummus toppad med rostade rotfrukter, tahini och granatäpple",
+      en: "Creamy hummus topped with roasted root vegetables, tahini and pomegranate",
+    },
+    price: 159,
+    image: "dish-4",
+    category: { sv: "Vegetariska Rätter", en: "Vegetarian Dishes" },
+    ingredients: {
+      sv: "Kikärtor, palsternacka, morot, sötpotatis, tahini, granatäpple, olivolja, spiskummin",
+      en: "Chickpeas, parsnip, carrot, sweet potato, tahini, pomegranate, olive oil, cumin",
+    },
+    allergens: { sv: "Sesam", en: "Sesame" },
+    calories: 420,
+    servingSize: { sv: "340g", en: "340g" },
+    preparationTime: 30,
+    isVegetarian: true,
+    isVegan: true,
+    isGlutenFree: true,
+    spicyLevel: 0,
   },
 ];
 
