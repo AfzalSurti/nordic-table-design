@@ -98,7 +98,14 @@ Write-Host ""
 Write-Host "To stop: Press Ctrl+C" -ForegroundColor Yellow
 Write-Host ""
 
-# Start the servers
-npm run dev:all
+# Start both servers using concurrently
+Write-Host "Starting servers with concurrently..." -ForegroundColor Cyan
+Write-Host ""
+
+npx concurrently `
+  --names "FRONTEND,BACKEND" `
+  --prefix-colors "green,blue" `
+  "cd frontend && npm run dev" `
+  "cd backend && npm run dev"
 
 Read-Host "Press Enter to exit"

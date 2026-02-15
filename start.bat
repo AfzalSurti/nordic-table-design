@@ -79,6 +79,16 @@ echo.
 echo To stop: Press Ctrl+C
 echo.
 
-npm run dev:all
+REM Install concurrently if not available
+where npx >nul 2>&1
+if errorlevel 1 (
+    echo [WARNING] npx not found, starting servers separately...
+    REM Can't start both in parallel without concurrently
+    cd frontend
+    call npm run dev
+) else (
+    REM Use concurrently to run both
+    npx concurrently "cd frontend && npm run dev" "cd backend && npm run dev"
+)
 
 pause
