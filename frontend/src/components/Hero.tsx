@@ -13,9 +13,11 @@ export default function Hero() {
       <div className="absolute inset-0">
         <img
           src={heroImg}
-          alt={info.name}
+          alt="Saffran Restaurant interior with traditional Middle Eastern decoration"
           className="w-full h-full object-cover animate-scale-hero"
           loading="eager"
+          width={1920}
+          height={1080}
         />
         <div className="absolute inset-0" style={{ background: "var(--hero-overlay)" }} />
       </div>

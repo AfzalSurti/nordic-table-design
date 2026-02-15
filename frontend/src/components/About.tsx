@@ -11,7 +11,7 @@ export default function About() {
       <div className="grid md:grid-cols-2 gap-12 items-center">
         <ScrollReveal>
           <div className="aspect-[4/5] rounded-lg overflow-hidden">
-            <img src={chefImg} alt="Chef Ahmad Rashidi" className="w-full h-full object-cover" loading="lazy" />
+            <img src={chefImg} alt="Ahmad Rashidi, Saffran chef and founder" className="w-full h-full object-cover" loading="lazy" />
           </div>
         </ScrollReveal>
         <ScrollReveal delay={200}>

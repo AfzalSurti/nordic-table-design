@@ -51,11 +51,11 @@
     {
       "@context": "https://schema.org",
       "@type": "Restaurant",
-      "name": "Saffran Restaurant",
-      "alternateName": "Saffran",
+      "name": "Saffran",
+      "alternateName": "Saffran Restaurant",
       "description": "Saffran Restaurant - Autentisk Orientalisk Restaurang i Stockholm. Smaken av Mellanöstern med skandinavisk elegans. Lunchbuffé, catering & online bordsbooking.",
       "url": "https://saffran-peach.vercel.app/",
-      "image": "https://saffran-peach.vercel.app/favicon.svg",
+      "image": "https://saffran-peach.vercel.app/og-image.jpg",
       "telephone": "+46812345667",
       "email": "info@saffranrestaurant.se",
       "address": {
@@ -74,6 +74,16 @@
       "servesCuisine": ["Middle Eastern", "Nordic"],
       "cuisine": "Middle Eastern",
       "priceRange": "$$",
+      "sameAs": [
+        "https://instagram.com/saffransthlm",
+        "https://facebook.com/saffransthlm",
+        "https://tiktok.com/@saffransthlm"
+      ],
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.5",
+        "reviewCount": "100"
+      },
       "openingHoursSpecification": [
         {
           "@type": "OpeningHoursSpecification",
@@ -81,8 +91,6 @@
           "opens": "11:00",
           "closes": "21:00"
         },
-        {
-          "@type": "OpeningHoursSpecification",
           "dayOfWeek": "Friday",
           "opens": "11:00",
           "closes": "22:00"
@@ -143,6 +151,8 @@
     </script>
   </head>
   <body>
+    <!-- Skip to main content link for accessibility -->
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:bg-white focus:text-black focus:px-4 focus:py-2 focus:z-[9999] focus:rounded">Hoppa till huvudinnehållet</a>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>

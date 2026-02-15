@@ -13,14 +13,14 @@ import heroImg from "@/assets/hero-restaurant.jpg";
 import chefImg from "@/assets/about-chef.jpg";
 
 const galleryImages = [
-  { src: heroImg, alt: "Restaurant interior", span: "md:col-span-2 md:row-span-2" },
-  { src: dish1, alt: "Lamb kebab", span: "" },
-  { src: dish2, alt: "Mixed grill", span: "" },
-  { src: dish3, alt: "Saffron rice", span: "" },
-  { src: dish4, alt: "Falafel plate", span: "" },
-  { src: dish5, alt: "Grilled sea bass", span: "md:col-span-2" },
-  { src: dish6, alt: "Dessert platter", span: "" },
-  { src: chefImg, alt: "Our chef", span: "" },
+  { src: heroImg, alt: "Saffran Restaurant dining area with warm lighting and traditional décor", span: "md:col-span-2 md:row-span-2" },
+  { src: dish1, alt: "Lamb kebab platter with saffron rice and yogurt sauce", span: "" },
+  { src: dish2, alt: "Mixed grill with chicken and lamb skewers", span: "" },
+  { src: dish3, alt: "Golden saffron rice with chicken and dried fruits", span: "" },
+  { src: dish4, alt: "Crispy falafel plate with hummus and tahini", span: "" },
+  { src: dish5, alt: "Whole grilled sea bass with lemon herbs and roasted vegetables", span: "md:col-span-2" },
+  { src: dish6, alt: "Dessert platter with baklava, kunafa and pistachio ice cream", span: "" },
+  { src: chefImg, alt: "Ahmad Rashidi, founder and chef of Saffran Restaurant", span: "" },
 ];
 
 export default function Gallery() {

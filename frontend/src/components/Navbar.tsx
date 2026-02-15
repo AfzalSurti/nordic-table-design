@@ -55,8 +55,10 @@ export default function Navbar() {
   return (
     <nav
       className={cn(
-        "fixed top-0 left-0 right-0 z-50 transition-all duration-500",
-        scrolled ? "nav-scrolled" : "bg-transparent"
+        "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
+        scrolled 
+          ? "bg-background/80 backdrop-blur-xl border-b border-border/10 shadow-sm" 
+          : "bg-transparent"
       )}
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between px-5 md:px-8 h-16 md:h-20">
@@ -72,8 +74,8 @@ export default function Navbar() {
               key={id}
               onClick={() => scrollTo(id)}
               className={cn(
-                "text-sm tracking-wide uppercase transition-colors duration-200",
-                active === id ? "text-primary" : "text-foreground/70 hover:text-foreground"
+                "text-sm tracking-wide uppercase transition-colors duration-200 relative pb-1 border-b-2 border-transparent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50 rounded px-1",
+                active === id ? "text-primary border-b-primary" : "text-foreground/70 hover:text-foreground"
               )}
             >
               {navLabels[id]}
@@ -82,21 +84,37 @@ export default function Navbar() {
         </div>
 
         <div className="hidden lg:flex items-center gap-4">
-          <button onClick={toggleLang} className="flex items-center gap-1.5 text-sm text-foreground/70 hover:text-foreground transition-colors" aria-label="Switch language">
+          <button 
+            onClick={toggleLang} 
+            className="flex items-center gap-1.5 text-sm text-foreground/70 hover:text-foreground transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50 rounded px-2 py-1" 
+            aria-label="Switch language"
+          >
             <Globe className="w-4 h-4" />
             {lang === "sv" ? "EN" : "SV"}
           </button>
-          <button onClick={() => scrollTo("booking")} className="gold-button text-sm">
+          <button 
+            onClick={() => scrollTo("booking")} 
+            className="gold-button text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50 focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+          >
             {t.nav.book}
           </button>
         </div>
 
         {/* Mobile hamburger */}
         <div className="flex lg:hidden items-center gap-3">
-          <button onClick={toggleLang} className="text-foreground/70 hover:text-foreground" aria-label="Switch language">
+          <button 
+            onClick={toggleLang} 
+            className="text-foreground/70 hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50 rounded p-1" 
+            aria-label="Switch language"
+          >
             <Globe className="w-5 h-5" />
           </button>
-          <button onClick={() => setOpen(!open)} aria-label="Menu" className="text-foreground">
+          <button 
+            onClick={() => setOpen(!open)} 
+            aria-label="Toggle menu"
+            aria-expanded={open}
+            className="text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50 rounded p-1"
+          >
             {open ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
         </div>
@@ -104,18 +122,21 @@ export default function Navbar() {
 
       {/* Mobile menu */}
       {open && (
-        <div className="lg:hidden bg-background/95 backdrop-blur-lg border-t border-border/30 animate-fade-in">
+        <div className="lg:hidden bg-background/95 backdrop-blur-lg border-t border-border/30 animate-fade-in" role="navigation">
           <div className="flex flex-col py-4 px-5 gap-1">
             {visibleLinks.map((id) => (
               <button
                 key={id}
                 onClick={() => scrollTo(id)}
-                className="text-left py-3 text-base text-foreground/80 hover:text-primary transition-colors uppercase tracking-wide"
+                className="text-left py-3 text-base text-foreground/80 hover:text-primary transition-colors uppercase tracking-wide focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50 rounded px-2"
               >
                 {navLabels[id]}
               </button>
             ))}
-            <button onClick={() => scrollTo("booking")} className="gold-button text-sm mt-3 w-full">
+            <button 
+              onClick={() => scrollTo("booking")} 
+              className="gold-button text-sm mt-3 w-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50 focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+            >
               {t.nav.book}
             </button>
           </div>

@@ -40,7 +40,7 @@ export default function Booking() {
   };
 
   const inputClass =
-    "w-full bg-secondary border border-border/50 rounded-md px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all";
+    "w-full bg-secondary border border-border/50 rounded-md px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all disabled:opacity-50 disabled:cursor-not-allowed";
 
   if (submitted) {
     return (

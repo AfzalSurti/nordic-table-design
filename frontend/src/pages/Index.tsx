@@ -11,22 +11,26 @@ import Contact from "@/components/Contact";
 import Booking from "@/components/Booking";
 import Footer from "@/components/Footer";
 import BackToTop from "@/components/BackToTop";
+import FloatingBookingButton from "@/components/FloatingBookingButton";
 
 const Index = () => (
   <>
     <Navbar />
-    <Hero />
-    <FeaturedDishes />
-    <MenuSection />
-    <LunchBuffet />
-    <Catering />
-    <About />
-    <Gallery />
-    <Reviews />
-    <Contact />
-    <Booking />
+    <main id="main-content">
+      <Hero />
+      <FeaturedDishes />
+      <MenuSection />
+      <LunchBuffet />
+      <Catering />
+      <About />
+      <Gallery />
+      <Reviews />
+      <Contact />
+      <Booking />
+    </main>
     <Footer />
     <BackToTop />
+    <FloatingBookingButton />
   </>
 );
 

@@ -45,9 +45,11 @@ export default function FeaturedDishes() {
               <div className="aspect-square overflow-hidden relative">
                 <img
                   src={images[dish.image]}
-                  alt={bi(dish.name)}
+                  alt={`${bi(dish.name)} - ${bi(dish.description)}`}
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                   loading="lazy"
+                  width={400}
+                  height={400}
                 />
                 {/* Hover Overlay */}
                 <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
