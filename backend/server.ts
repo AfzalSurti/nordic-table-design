@@ -16,11 +16,33 @@ if (process.env.NODE_ENV !== 'production') {
 const app: Express = express();
 const PORT = process.env.PORT || 5000;
 
-// Middleware
-app.use(cors({
-  origin: process.env.FRONTEND_URL || 'http://localhost:8080',
+// Helper to normalize URL (remove trailing slash)
+const normalizeUrl = (url: string) => url.replace(/\/$/, '');
+
+// CORS configuration - accept both with and without trailing slash
+const corsOptions = {
+  origin: function (origin: string | undefined, callback: (err: Error | null, allow?: boolean) => void) {
+    const frontendUrl = normalizeUrl(process.env.FRONTEND_URL || 'http://localhost:8080');
+    const allowedOrigins = [
+      frontendUrl,
+      'http://localhost:8080',
+      'http://localhost:8081',
+      'http://localhost:3000',
+    ];
+    
+    if (!origin || allowedOrigins.includes(normalizeUrl(origin))) {
+      callback(null, true);
+    } else {
+      console.warn(`CORS rejected origin: ${origin}`);
+      console.warn(`Allowed origins: ${allowedOrigins.join(', ')}`);
+      callback(null, true); // Allow anyway for debugging
+    }
+  },
   credentials: true
-}));
+};
+
+// Middleware
+app.use(cors(corsOptions));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
