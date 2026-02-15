@@ -1,19 +1,42 @@
 import { useState } from "react";
 import { useLang } from "@/context/LanguageContext";
 import ScrollReveal from "@/components/ScrollReveal";
-import { CalendarDays, Users, CheckCircle2 } from "lucide-react";
+import { CalendarDays, Users, CheckCircle2, AlertCircle } from "lucide-react";
+import { submitBooking } from "@/services/bookingService";
 
 export default function Booking() {
   const { t } = useLang();
   const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
   const [form, setForm] = useState({
     name: "", email: "", phone: "", date: "", time: "", guests: "", message: "",
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // In production, connect to Cloud/email
-    setSubmitted(true);
+    setError("");
+    setLoading(true);
+
+    try {
+      // Validate form
+      if (!form.name || !form.email || !form.phone || !form.date || !form.time || !form.guests) {
+        setError("Please fill in all required fields");
+        setLoading(false);
+        return;
+      }
+
+      // Submit booking to backend
+      await submitBooking(form);
+      
+      // Reset form and show success message
+      setForm({ name: "", email: "", phone: "", date: "", time: "", guests: "", message: "" });
+      setSubmitted(true);
+    } catch (err) {
+      console.error("Booking error:", err);
+      setError(err instanceof Error ? err.message : "Failed to submit booking. Please try again.");
+      setLoading(false);
+    }
   };
 
   const inputClass =
@@ -46,6 +69,13 @@ export default function Booking() {
 
         <ScrollReveal delay={150}>
           <form onSubmit={handleSubmit} className="glass-card p-6 md:p-8 space-y-4">
+            {error && (
+              <div className="flex items-start gap-3 p-4 bg-red-50 border border-red-200 rounded-lg">
+                <AlertCircle className="w-5 h-5 text-red-600 flex-shrink-0 mt-0.5" />
+                <p className="text-sm text-red-800">{error}</p>
+              </div>
+            )}
+
             <div className="grid sm:grid-cols-2 gap-4">
               <input
                 required
@@ -55,6 +85,7 @@ export default function Booking() {
                 value={form.name}
                 onChange={(e) => setForm({ ...form, name: e.target.value })}
                 maxLength={100}
+                disabled={loading}
               />
               <input
                 required
@@ -64,6 +95,7 @@ export default function Booking() {
                 value={form.email}
                 onChange={(e) => setForm({ ...form, email: e.target.value })}
                 maxLength={255}
+                disabled={loading}
               />
             </div>
             <input
@@ -74,6 +106,7 @@ export default function Booking() {
               value={form.phone}
               onChange={(e) => setForm({ ...form, phone: e.target.value })}
               maxLength={20}
+              disabled={loading}
             />
             <div className="grid sm:grid-cols-3 gap-4">
               <input
@@ -82,6 +115,7 @@ export default function Booking() {
                 className={inputClass}
                 value={form.date}
                 onChange={(e) => setForm({ ...form, date: e.target.value })}
+                disabled={loading}
               />
               <input
                 required
@@ -89,6 +123,7 @@ export default function Booking() {
                 className={inputClass}
                 value={form.time}
                 onChange={(e) => setForm({ ...form, time: e.target.value })}
+                disabled={loading}
               />
               <div className="relative">
                 <Users className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
@@ -101,6 +136,7 @@ export default function Booking() {
                   className={`${inputClass} pl-9`}
                   value={form.guests}
                   onChange={(e) => setForm({ ...form, guests: e.target.value })}
+                  disabled={loading}
                 />
               </div>
             </div>
@@ -110,9 +146,14 @@ export default function Booking() {
               value={form.message}
               onChange={(e) => setForm({ ...form, message: e.target.value })}
               maxLength={1000}
+              disabled={loading}
             />
-            <button type="submit" className="gold-button w-full text-base py-4">
-              {t.booking.submit}
+            <button 
+              type="submit" 
+              className="gold-button w-full text-base py-4 disabled:opacity-50 disabled:cursor-not-allowed"
+              disabled={loading}
+            >
+              {loading ? "Submitting..." : t.booking.submit}
             </button>
           </form>
         </ScrollReveal>
