@@ -1,4 +1,4 @@
-# Nordic Table Design - Restaurant Website
+# Saffran - Restaurant Website
 
 Welcome to **Nordic Table Design**, a modern, elegant restaurant website featuring an online booking system and comprehensive dining experience showcase.
 
