@@ -1,5 +1,13 @@
 // API Configuration
-const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+// Remove trailing slash to prevent double slash in URL
+// Default to production backend URL if not set
+const API_URL = (
+  import.meta.env.VITE_API_URL || 
+  (typeof window !== 'undefined' && window.location.hostname === 'localhost' 
+    ? 'http://localhost:5000' 
+    : 'https://nordic-table-design.vercel.app'
+  )
+).replace(/\/$/, '');
 
 // Booking interface
 export interface BookingData {

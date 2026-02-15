@@ -28,6 +28,8 @@ const corsOptions = {
       'http://localhost:8080',
       'http://localhost:8081',
       'http://localhost:3000',
+      'https://saffran-peach.vercel.app',
+      'https://nordic-table-design.vercel.app',
     ];
     
     if (!origin || allowedOrigins.includes(normalizeUrl(origin))) {
@@ -38,7 +40,9 @@ const corsOptions = {
       callback(null, true); // Allow anyway for debugging
     }
   },
-  credentials: true
+  credentials: true,
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization']
 };
 
 // Middleware
