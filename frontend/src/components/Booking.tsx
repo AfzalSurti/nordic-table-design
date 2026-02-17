@@ -112,6 +112,7 @@ export default function Booking() {
               <input
                 required
                 type="date"
+                placeholder={t.booking.dateFormat}
                 className={inputClass}
                 value={form.date}
                 onChange={(e) => setForm({ ...form, date: e.target.value })}
@@ -120,6 +121,7 @@ export default function Booking() {
               <input
                 required
                 type="time"
+                placeholder={t.booking.timeFormat}
                 className={inputClass}
                 value={form.time}
                 onChange={(e) => setForm({ ...form, time: e.target.value })}
